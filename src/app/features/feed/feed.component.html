@@ -1,0 +1,72 @@
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="title">Home</div>
+    <div class="icons">
+      <i class="fas fa-bell"></i>
+      <i class="fas fa-envelope"></i>
+    </div>
+  </div>
+
+  <!-- Stories -->
+  <div class="stories">
+    <button class="add-button">+</button>
+    <div class="story-list">
+      <div class="story" *ngFor="let story of stories">
+        <img [src]="story" alt="story" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Posts -->
+<div class="posts">
+  <div class="post" *ngFor="let post of posts; let i = index">
+    <div class="post-header">
+      <img [src]="post.avatar" class="avatar" alt="Avatar" />
+      <span class="post-name">{{ post.name }}</span>
+    </div>
+    <img [src]="post.image" class="post-image" alt="Post image" />
+    <p class="post-description">
+      <strong>{{ post.name }}</strong> {{ post.description }}
+    </p>
+    <div class="post-actions">
+      <i
+        class="fas fa-heart"
+        [class.liked]="post.liked"
+        (click)="toggleLike(post)"
+        title="Curtir"
+      >♡</i>
+    </div>
+        <div class="comments-section">
+      <div class="comments-list">
+        <div class="comment" *ngFor="let comment of post.comments">
+          <span>{{ comment }}</span>
+        </div>
+      </div>
+      <div class="add-comment">
+        <input
+          type="text"
+          [(ngModel)]="newComments[i]"
+          placeholder="Adicionar comentário..."
+        />
+        <button (click)="addComment(i)">Comentar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <i class="fas fa-home"></i>
+    <i class="fas fa-layer-group"></i>
+    <button class="add-button center" (click)="openModal()">+</button>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-user"></i>
+  </div>
+</div>
+
+<app-new-post-modal
+  *ngIf="showModal"
+  (postCreated)="addNewPost($event)"
+  (closed)="closeModal()"
+></app-new-post-modal>

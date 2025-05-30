@@ -1,0 +1,70 @@
+<form [formGroup]="companyForm" (ngSubmit)="handleSubmit()">
+  <div formGroupName="company" class="mb-6">
+    <h2 class="text-lg mb-5">{{ 'forms.company.label' | translate }}</h2>
+    <div class="grid">
+      <div class="col-6">
+        <p-floatLabel>
+          <input type="text" pInputText formControlName="name" class="w-full" />
+          <label for="name">{{ 'forms.company.name' | translate}}</label>
+        </p-floatLabel>
+        <app-form-error [control]="companyForm.get('company.name')!" />
+      </div>
+      <div class="col-6">
+        <p-floatLabel>
+          <input type="text" pInputText formControlName="phone" class="w-full" />
+          <label for="phone">{{ 'forms.company.phone' | translate}}</label>
+        </p-floatLabel>
+        <app-form-error [control]="companyForm.get('company.phone')!" />
+      </div>
+    </div>
+    <div class="mt-4">
+      <p-floatLabel>
+        <input type="text" pInputText formControlName="duns" class="w-full" />
+        <label for="duns">D.U.N.S</label>
+      </p-floatLabel>
+      <app-form-error [control]="companyForm.get('company.duns')!" />
+    </div>
+  </div>
+
+  <div formGroupName="user" class="mb-6">
+    <h2 class="text-lg mb-5">{{ 'forms.user.label' | translate }}</h2>
+    <div class="mt-4">
+      <p-floatLabel>
+        <input type="text" pInputText formControlName="email" class="w-full" />
+        <label for="email">{{ 'forms.user.email' | translate}}</label>
+      </p-floatLabel>
+      <app-form-error [control]="companyForm.get('user.email')!" />
+    </div>
+    <div class="mt-4">
+      <p-floatLabel>
+        <p-password formControlName="password" [toggleMask]="true" autocomplete="on" [promptLabel]="'forms.passwordValidator.label' | translate" [weakLabel]="'forms.passwordValidator.status.weak' | translate" [mediumLabel]="'forms.passwordValidator.status.medium' | translate" [strongLabel]="'forms.passwordValidator.status.strong' | translate">
+          <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p class="mt-2">{{ "forms.passwordValidator.suggestions" | translate }}</p>
+            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+              <li>{{ "forms.passwordValidator.tips.lowercase" | translate }}</li>
+              <li>{{ "forms.passwordValidator.tips.uppercase" | translate }}</li>
+              <li>{{ "forms.passwordValidator.tips.numeric" | translate }}</li>
+              <li>{{ "forms.passwordValidator.tips.minimum" | translate }}</li>
+            </ul>
+          </ng-template>
+        </p-password>
+        <label for="password">{{ 'forms.user.password' | translate}}</label>
+      </p-floatLabel>
+      <app-form-error [control]="companyForm.get('user.password')!" />
+    </div>
+    <div class="mt-4">
+      <p-floatLabel>
+        <p-password formControlName="confirmPassword" autocomplete="on" [toggleMask]="true" [feedback]="false"></p-password>
+        <label>{{ 'forms.user.confirmPassword' | translate}}</label>
+      </p-floatLabel>
+      <div class="form-error" *ngIf="showPasswordError">
+        {{ 'forms.user.passwordDontMatch' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3">
+    <p-button label="{{'buttons.register' | translate}}" type="submit" severity="primary" styleClass="w-full" />
+  </div>
+</form>

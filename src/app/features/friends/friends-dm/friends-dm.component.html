@@ -1,0 +1,26 @@
+<div class="friends-chat-container">
+  <div class="friends-list">
+    <h3 class="p-2">Amigos</h3>
+    <ul>
+      <li *ngFor="let friend of friends" [class.selected]="friend === selectedFriend" (click)="selectFriend(friend)">
+        <img [src]="friend.avatar" alt="{{friend.name}}" />
+        <span>{{ friend.name }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="chat-area" *ngIf="selectedFriend">
+    <div class="chat-header">
+      <img [src]="selectedFriend.avatar" alt="{{selectedFriend.name}}" />
+      <span>{{ selectedFriend.name }}</span>
+    </div>
+    <div class="chat-messages">
+      <div *ngFor="let msg of messages" [class.me]="msg.from === 'Eu'">
+        <strong>{{ msg.from }}:</strong> {{ msg.text }}
+      </div>
+    </div>
+    <div class="chat-input">
+      <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Digite sua mensagem..." />
+      <button (click)="sendMessage()">Enviar</button>
+    </div>
+  </div>
+</div>

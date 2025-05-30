@@ -1,0 +1,30 @@
+<section class=" w-full h-full padding border-round-lg ">
+    <div class="w-full h-full gap-2 border-round-lg"> 
+        <p-card class="sticky top-0 w-full h-7rem surface-100 border-round-lg flex align-items-center justify-content-center">
+            <h2 class="m-0">Games Gallery</h2>
+        </p-card>
+        <div class="hide-scrollbar overflow-auto h-full flex flex-column px-5 py-2 gap-3 mt-4">  
+            <div class="game-cards flex flex-wrap gap-4 justify-content-center">
+                <div class="game-card border-round-lg surface-200 p-3 flex flex-column align-items-center" *ngFor="let game of games">
+                <img [src]="game.image" alt="{{game.title}}" class="game-img mb-2" />
+                <div class="font-bold mb-1">{{ game.title }}</div>
+                <div class="mb-2">{{ game.studio }}</div>
+                <div class="stars mb-2">
+                    <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+                    <i class="pi"
+                        [ngClass]="star <= game.rating ? 'pi-star-fill text-yellow-500' : 'pi-star text-gray-400'"></i>
+                    </ng-container>
+                </div>
+                <button
+                class="p-button p-component p-button-sm"
+                [disabled]="game.wishlisted"
+                (click)="addToWishlist(game)">
+                <i *ngIf="!game.wishlisted" class="pi pi-heart mr-2"></i>
+                <i *ngIf="game.wishlisted" class="pi pi-check-circle mr-2"></i>
+                {{ game.wishlisted ? 'Adicionado' : 'Adicionar à lista de desejos' }}
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>  
+</section>

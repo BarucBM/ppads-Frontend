@@ -1,0 +1,46 @@
+.auth-bg {
+  background: #1774ff;
+  background: linear-gradient(185deg, rgb(69, 93, 235) 0%, rgb(0, 8, 116) 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.rounded{
+  border-radius: 1rem;
+}
+
+.auth-detail {
+  position: absolute;
+  bottom: -40%;
+  left: -50%;
+  width: auto;
+  height: 100%;
+}
+
+
+
+.auth-avatar {
+  position: absolute;
+  width: 90%;
+  right: 10%;
+  bottom: 15%;
+}
+
+.auth-container {
+  width: 80%;
+  height: 90%;
+  left: 50;
+  bottom: 50;
+  background: rgba(183, 237, 246, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(3.7px);
+  border: 2px solid rgba(183, 237, 246, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.auth-text {
+  color: #f0f0f0;
+}

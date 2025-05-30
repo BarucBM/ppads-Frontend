@@ -1,0 +1,253 @@
+{
+	"language-selector": {
+		"placeholder": "Select a language"
+	},
+	"slogan": "Successful events start with accurate forecasts.",
+	"login": {
+		"title": "Welcome Back!",
+		"subtitle": "Enter your data or sign in with Google",
+		"haveAccount": "Already have an account?",
+		"logIn": "Log in",
+		"dontHaveAccount": "Not a member yet?",
+		"signUp": "Sign up",
+		"or": "or",
+		"form": {
+			"email": "Email",
+			"password": "Password"
+		}
+	},
+	"register": {
+		"title": "Create account",
+		"subtitle": "Let's get started!",
+		"accountType": {
+			"label": "Choose your account type",
+			"customer": "Personal",
+			"company": "Corporate"
+		},
+		"customer": {
+			"title": "Create your account via Google",
+			"googleInfo": "You need to get your data from Google",
+			"additionalInformations": "Additional Information",
+			"connected": "Connected"
+		}
+	},
+	"buttons": {
+		"register": "Register",
+		"save": "Submit",
+		"delete": "Remove",
+		"discoverEvents": "Discover Events",
+		"showSuggestions": "Show Suggestions",
+		"showReminders": "Show Reminders",
+		"showWeatherChanges": "Show Weather Changes",
+		"clear": "Clear"
+	},
+	"checkbox": {
+		"activateSug": "Activate Suggestions",
+		"activateRem": "Activate Reminders",
+		"activateWea": "Activate Weather Changes"
+	},
+	"forms": {
+		"requiredMessage": "This field is required.",
+		"emailFormatMessage": "Invalid email format.",
+		"minValueMessage": "The min value is: ",
+		"passwordValidator": {
+			"label": "Pick a Password",
+			"suggestions": "Suggestions",
+			"status": {
+				"weak": "Weak",
+				"medium": "Medium",
+				"strong": "Strong"
+			},
+			"tips": {
+				"lowercase": "At least one lowercase",
+				"uppercase": "At least one uppercase",
+				"numeric": "At least one numeric",
+				"minimum": "Minimum 8 characters"
+			}
+		},
+		"user": {
+			"label": "User Information",
+			"email": "Email",
+			"password": "Password",
+			"confirmPassword": "Confirm password",
+			"passwordDontMatch": "Password don't Match"
+		},
+		"customer": {
+			"label": "Customer Information",
+			"name": "Name",
+			"phone": "Phone",
+			"address": "Address"
+		},
+		"company": {
+			"label": "Company Information",
+			"name": "Company name",
+			"phone": "Phone",
+			"address": "Address"
+		},
+		"event": {
+			"createFormTitle": "Create new Event",
+			"updateFormTitle": "Update Event",
+			"steps": {
+				"info": {
+					"label": "Basic Info",
+					"title": "Event Informations",
+					"subtitle": "Enter your event information"
+				},
+				"address": {
+					"label": "Address",
+					"title": "Address Information",
+					"subtitle": "Enter the address of the event"
+				},
+				"tickets": {
+					"label": "Tickets",
+					"title": "Ticket Information",
+					"subtitle": "Enter the event ticket information"
+				},
+				"confirmation": {
+					"label": "Confirmation",
+					"title": "Confirmation",
+					"subtitle": "Confirm your event information"
+				},
+				"nextBtnLabel": "Next",
+				"backBtnLabel": "Back",
+				"completeBtnLabel": "Complete"
+			},
+			"title": "Title",
+			"description": "Description",
+			"startDate": "Start Date",
+			"endDate": "End Date",
+			"images": "Images",
+			"freeEntry": "Free Entry",
+			"ticketUnitPrice": "Unit Price",
+			"ticketTax": "Tax"
+		},
+		"address": {
+			"address": "Address",
+			"fullAddress": "Full Address",
+			"addressPlaceholder": "Enter your full address",
+			"postalCode": "Postal Code",
+			"streetName": "Street Name",
+			"streetNumber": "Street Number",
+			"addressComplement": "Address Complement",
+			"neighborhood": "Neighborhood",
+			"city": "City",
+			"state": "State",
+			"country": "Country"
+		},
+		"imageUploader": {
+			"info": "Drag and drop files here to upload.",
+			"statusPending": "Pending",
+			"statusComplete": "Complete"
+		},
+		"settings": {
+			"title": "App Settings",
+			"subtitle": "Customize your experience.",
+			"language": "Language",
+			"theme": "Theme",
+			"themeLight": "Light",
+			"themeDark": "Dark",
+			"btnClose": "Close"
+		}
+	},
+	"navbar": {
+		"navigateLabel": "Navigate",
+		"othersLabel": "Others",
+		"home": "Home",
+		"discover": "Discover",
+		"events": "My Events",
+		"manageEvents": "Manage Events",
+		"cart": "Cart",
+		"notifications": "Notifications",
+		"settings": "Settings",
+		"logout": "Logout"
+	},
+	"header": {
+		"hello": "Hello",
+		"customerAccount": "Customer Account",
+		"companyAccount": "Company Account",
+		"notifications": {
+			"title": "Notifications"
+		}
+	},
+	"pages": {
+		"error": {
+			"notFound": {
+				"title": "Page Not Found",
+				"text": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+			},
+			"unauthorized": {
+				"title": "Permission Denied",
+				"text": "You are not authorized to access this content."
+			},
+			"backHomeBtn": "Back to Home"
+		},
+		"home": {
+			"adText": "Get the Tickets Now or Never!"
+		},
+		"emptyMessage": "No data found!"
+	},
+	"events": {
+		"search": "Search",
+		"date": "Date",
+		"submit": "Submit",
+		"buy": "Buy tickets",
+		"available": "tickets available",
+		"access": "Click to access!",
+		"sortByDate": {
+			"placeholder": "Order by Date",
+			"ascending": "Ascending date",
+			"descending": "Descending date"
+		},
+		"btnCancel": "Cancel",
+		"btnCreate": "New Event",
+		"btnDelete": "Delete",
+		"btnUpdate": "Update",
+		"btnSeeDetails": "See Details",
+		"btnReview": "Review Now!",
+		"cancelDialog": {
+			"message": "Are you sure that you want to cancel this event?",
+			"header": "Confirmation",
+			"acceptLabel": "Yes",
+			"rejectLabel": "No"
+		},
+		"customer": {
+			"title": "My Events",
+			"tab1": "Purchased Events",
+			"tab2": "Calendar"
+		},
+		"company": {
+			"title": "Registered Events",
+			"tab1": "Manage Events",
+			"tab2": "Calendar"
+		}
+	},
+	"messages": {
+		"exploreEvents": "Want to explore new events?",
+		"currentWeather": "Current Temperature"
+	},
+	"notifications": {
+		"preferences": {
+			"title": "Notifications Preferences",
+			"description": "Choose the types of notifications you want to receive:",
+			"descriptionExamples": "Check out the examples of notifications that can be sent:"
+		},
+		"examples": {
+			"info": "Weather changes for 05/11: light rain forecast.",
+			"success": "Forecast for 04/11 as expected: sunny with clouds.",
+			"success2": "Event successfully acquired! Good luck! ",
+			"warning": "Your “Dance Festival” event will take place in 2 days!",
+			"suggestions": {
+				"title": "Suggestion:",
+				"description": "Discover the best events happening in Blumenau and nearby. Don’t miss the festivals, concerts, and fairs bringing excitement to the region!"
+			},
+			"reminders": {
+				"title": "Reminder:",
+				"description": "The Oktoberfest Blumenau event is approaching and promises to be amazing! Get ready to enjoy."
+			},
+			"weatherChanges": {
+				"title": "Attention!",
+				"description": "The weather service has issued an alert for adverse conditions in the coming hours. Expected: storms, heavy rain, and transportation disruptions."
+			}
+		}
+	}
+}

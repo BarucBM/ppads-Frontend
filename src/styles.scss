@@ -1,0 +1,125 @@
+@import "primeicons/primeicons.css";
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
+
+// Custom colors
+.text-primary-100 {
+    color: #2c3aba !important;
+}
+
+.bg-primary-100 {
+    background-color: #2c46ba !important;
+}
+
+.p-inputnumber-input {
+    flex: 1 1 auto;
+    width: 2.6rem;
+    padding: 0.5rem 0.9rem;
+}
+
+.p-element.p-inputwrapper {
+    width: 100%;
+
+    .p-inputnumber.p-component {
+        width: 100%;
+    }
+}
+
+.text-primary-200 {
+    color: #009098 !important;
+}
+
+.bg-primary-200 {
+    background-color: #003598 !important;
+}
+
+.text-accent-100 {
+    color: #fb3b2d !important;
+}
+
+.bg-accent-100 {
+    background-color: #fb4c2d !important;
+}
+
+.text-accent-200 {
+    color: #8e5d00 !important;
+}
+
+.bg-accent-100 {
+    background-color: #8e5d00 !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(21 20 26 / 63%);
+    border-radius: 10px;
+}
+
+html[data-theme='light'] {
+    .show-light {
+        display: block !important;
+    }
+
+    .show-dark {
+        display: none !important;
+    }
+
+    .page-bg {
+        background-color: var(--surface-200);
+    }
+
+    .main-bg {
+        background-color: var(--surface-100);
+    }
+
+    .show-card::before {
+        background-color: rgba(0, 0, 0, 0.336);
+    }
+}
+
+html[data-theme='dark'] {
+    .show-light {
+        display: none !important;
+    }
+
+    .show-dark {
+        display: block !important;
+    }
+
+    .page-bg {
+        background-color: #18181b;
+    }
+
+    .main-bg {
+        background-color: #1e1e22;
+    }
+
+    .show-card::before {
+        background-color: rgba(0, 0, 0, 0.671);
+    }
+}
+
+.border-filter input{
+    border: none;
+    border-radius: 32px;
+    width: 10rem;
+    height: 3rem;
+    box-shadow: none;
+}
+
+.border-filter input:hover{
+    background-color:#8f8f8f ;
+}
+
+.p-divider.p-divider-horizontal::before {
+    border-color: var(--surface-300);
+    border-top-style: solid;
+}
+
+.search-bar{
+    background-color: var(--surface-ground);
+}

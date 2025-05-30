@@ -1,0 +1,30 @@
+<div class="modal-backdrop" (click)="close()"></div>
+    <div class="modal">
+      <h2>Criar Novo Post</h2>
+      <form (ngSubmit)="submit()" #postForm="ngForm">
+        <input
+          type="text"
+          placeholder="Nome"
+          [(ngModel)]="post.name"
+          name="name"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Imagem do Jogo URL"
+          [(ngModel)]="post.image"
+          name="image"
+          required
+        />
+        <textarea
+          placeholder="Descrição"
+          [(ngModel)]="post.description"
+          name="description"
+          required
+        ></textarea>
+        <div class="modal-actions">
+          <button type="submit" [disabled]="!postForm.form.valid">Postar</button>
+          <button type="button" (click)="close()">Cancelar</button>
+        </div>
+      </form>
+</div>
