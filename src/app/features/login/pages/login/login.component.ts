@@ -29,29 +29,31 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.authService.isLoggedIn()) {
-      this.router.navigateByUrl('/home');
-    }
+
   }
 
-  loginDefault(): void {
-    if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe({
-        next: (res: LoginResponse) => {
-          this.authService.setAuthToken(res.token);
-          this.authService.setRefreshToken(res.refreshToken);
-          this.authService.init();
-          this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('stateUrl') || '');
-          this.authService.authenticate();
-        },
-        error: () => {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Unable to login, invalid credentials.' });
-        }
-      });
+loginDefault(): void {
+  if (this.loginForm.valid) {
+    const { email, password } = this.loginForm.value;
+    // Busca usuários cadastrados no localStorage
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find((u: any) => u.email === email && u.password === password);
+
+    if (user) {
+      // Simula login
+      this.authService.setAuthToken('fake-jwt-token');
+      this.authService.setRefreshToken('fake-refresh-token');
+      this.authService.init();
+      this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('stateUrl') || '/home');
+      this.authService.authenticate();
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login simulado com sucesso.' });
     } else {
-      this.loginForm.markAllAsTouched();
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Usuário ou senha inválidos.' });
     }
+  } else {
+    this.loginForm.markAllAsTouched();
   }
+}
 
   loginWithGoogle(userData: SocialUser) {
     this.authService.loginGoogle(userData.email).subscribe({

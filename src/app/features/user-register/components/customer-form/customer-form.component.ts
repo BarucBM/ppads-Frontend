@@ -46,31 +46,39 @@ export class CustomerFormComponent {
     });
   }
 
-  handleSubmit(): void {
-    if (this.UserForm.valid && this.checkPasswordMatch()) {
-      const userFormValue = this.UserForm.get('user')?.value;
+handleSubmit(): void {
+  if (this.UserForm.valid && this.checkPasswordMatch()) {
+    const userFormValue = this.UserForm.get('user')?.value;
 
-      // Verificando se os valores foram obtidos
-      if (userFormValue) {
-        // Atribuindo os valores ao customerData.user
-        this.customerData.user.email = userFormValue.email;
-        this.customerData.user.password = userFormValue.password;
+    if (userFormValue) {
+      // Monta objeto do usuário
+      const newUser = {
+        email: userFormValue.email,
+        password: userFormValue.password,
+        role: userFormValue.role,
+        name: this.customerData.customer.name,
+        phone: this.customerData.customer.phone
+      };
+
+      // Busca usuários já cadastrados
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      // Verifica se já existe
+      const exists = users.some((u: any) => u.email === newUser.email);
+      if (exists) {
+        this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'E-mail já cadastrado!' });
+        return;
       }
+      // Salva novo usuário
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
 
-      this.authService.createUserCustomer(this.customerData).subscribe({
-        next: (res) => {
-          this.uploadUserPhoto(res.user?.id!);
-          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'User created successfully!' });
-          this.router.navigate(["/login"]);
-        },
-        error: (error) => {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Could not create your user, please try again later.' });
-        }
-      })
-    } else {
-      this.UserForm.markAllAsTouched();
+      this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Usuário registrado com sucesso!' });
+      this.router.navigate(['/login']);
     }
+  } else {
+    this.UserForm.markAllAsTouched();
   }
+}
 
   getUserData(userData: SocialUser) {
     this.userGoogleData = userData;
